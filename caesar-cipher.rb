@@ -1,4 +1,4 @@
-def ceasar_cipher(string, shift)
+def caesar_cipher(string, shift)
     new_string = ""
     alphabet = "abcdefghijklmnopqrstuvwxyz"
 
@@ -9,6 +9,7 @@ def ceasar_cipher(string, shift)
         if alphabet.include? new_char
             i = alphabet.index(new_char) - shift
             i += alphabet.length if i < 0
+            i -= alphabet.length if i > 25
             new_char = alphabet[i]
             #mantains the upper/lower case of the original character
             new_char.upcase! if c == c.upcase
